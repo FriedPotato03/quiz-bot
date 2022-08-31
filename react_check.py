@@ -63,7 +63,7 @@ async def quiz_refresh(guild_id):
 		#Checking for text question or pictorial question
 		if 'text' in loaded_quizzes[guild_id]['quiz'][quiz_progress[guild_id]['status']-1]:
 			message_string= format_question(guild_id, loaded_quizzes[guild_id]['quiz'][quiz_progress[guild_id]['status']-1])
-			user.send(message_string)
+			await user.send(message_string)
 		else:
 			message_string= f"**Quiz ID:** {guild_id} | {quiz_progress[guild_id]['quiz_id']}"
 			for user in quiz_progress[guild_id]['participants']:
